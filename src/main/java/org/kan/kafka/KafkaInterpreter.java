@@ -35,10 +35,21 @@ public class KafkaInterpreter extends Interpreter{
 
     @Override
     public InterpreterResult interpret(String topic, InterpreterContext interpreterContext) {
+        //Check for null
+        if (topic == null || topic.trim().length() == 0) {
+            return new InterpreterResult(InterpreterResult.Code.SUCCESS);
+        }
+
         logger.info("Subscribe to topic: " + topic);
         consumer.subscribe(Arrays.asList("topic"));
-        InterpreterResult result = new InterpreterResult(InterpreterResult.Code.SUCCESS);
-        return null;
+        InterpreterResult result = new InterpreterResult(InterpreterResult.Code.SUCCESS, consumer.poll(0).toString());
+        //while(true) {
+            //consumer.poll(0);
+
+        //}
+
+
+        return result;
     }
 
     @Override

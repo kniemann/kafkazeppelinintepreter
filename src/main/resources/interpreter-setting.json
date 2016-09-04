@@ -1,0 +1,25 @@
+{
+  "group": "kafka",
+  "name": "kafka",
+  "className": "org.kan.kafka.KafkaInterpreter",
+  "properties": {
+    "bootstrap.servers": {
+      "envName": "host",
+      "propertyName": null,
+      "defaultValue": "localhost:9092",
+      "description": "Bootstrap server list."
+    },
+    "key.deserializer": {
+      "envName": "key.deserializer",
+      "propertyName": null,
+      "defaultValue": "org.apache.kafka.common.serialization.StringSerializer",
+      "description": "Key deserializer."
+    },
+    "value.deserializer": {
+      "envName": "value.deserializer",
+      "propertyName": null,
+      "defaultValue": "org.apache.kafka.common.serialization.StringDeserializer",
+      "description": "Value deserializer."
+    }
+  }
+}
